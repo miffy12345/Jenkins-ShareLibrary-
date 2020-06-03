@@ -1,4 +1,4 @@
-package org
+package org.devops
 
 def SonarScan(projectName,branchName){
     
