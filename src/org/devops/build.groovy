@@ -8,14 +8,14 @@ def compile(){
 }
 
 //构建打包
-def package(){
+def buildpackage(){
         sh """
            mvn clean package -Dmaven.test.skip=true
         """
 }
 
 //手动打包
-def Artifacts(){
+def buildArtifacts(){
         sh '''cd ${WORKSPACE}/src/main/webapp
           jar -cvf ${project_name}.war ./*'''
         archiveArtifacts 'src/main/webapp/*.war'
