@@ -2,11 +2,7 @@ package org.devops
 
 #拉取git代码
 def checkgit(giturl,gitbranch){
-        checkout([$class: 'GitSCM', branches: [[name: "${gitbranch}"]], 
-                         doGenerateSubmoduleConfigurations: false, 
-                         extensions: [], 
-                         submoduleCfg: [], 
-                         userRemoteConfigs: [[credentialsId: 'gitlab-id', url: "${giturl}"]]])
+        git(url: '${giturl}', credentialsId: 'gitlab-id', branch: '${git}', changelog: true, poll: false)
 }
 
 #拉取svn代码
