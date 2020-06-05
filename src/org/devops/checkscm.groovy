@@ -8,7 +8,7 @@ def checkgit(giturl,gitbranch){
 def checkdockergit(giturl,gitbranch){
         git(url: '${giturl}', credentialsId: 'gitlab-id', branch: '${git}', changelog: true, poll: false)
         dir('script') {
-          git(url: 'http://gitlab.powerdata.com.cn/jenkins/Script_Library.git', credentialsId: 'gitlab-id', branch: '${git}', changelog: true, poll: false)
+          git(url: 'http://gitlab.powerdata.com.cn/jenkins/Script_Library.git', credentialsId: 'gitlab-id', branch: 'master', changelog: true, poll: false)
         }
 }
 
