@@ -17,7 +17,7 @@ def buildpackage(){
 def docker_images(libary_name,images_name,tag_name,giturl_branch){
         sh """
            cp  ${WORKSPACE}/src/main/docker/Dockerfile ${WORKSPACE}/target/
-           cp ${WORKSPACE}/script/build_pom.sh ${WORKSPACE}/target/
+           cp ${WORKSPACE}/script/docker/build_pom.sh ${WORKSPACE}/target/
            cd ${WORKSPACE}/target/
            sh build_pom.sh ${libary_name} ${images_name} ${tag_name} ${images_name}_${tag_name} ${giturl_branch}
         """
