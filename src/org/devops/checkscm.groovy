@@ -4,6 +4,13 @@ package org.devops
 def checkgit(giturl,gitbranch){
         git(url: '${giturl}', credentialsId: 'gitlab-id', branch: '${git}', changelog: true, poll: false)
 }
+//拉取代码和脚本
+def checkdockergit(){
+        git(url: '${giturl}', credentialsId: 'gitlab-id', branch: '${git}', changelog: true, poll: false)
+        dir('script') {
+          git(url: 'http://gitlab.powerdata.com.cn/jenkins/Script_Library.git', credentialsId: 'gitlab-id', branch: '${git}', changelog: true, poll: false)
+        }
+}
 
 //拉取svn代码
 def checksvn(svnurl){
