@@ -2,7 +2,7 @@ package org.devops
 
 //构建
 def compile(){
-        sh """
+     sh """
            mvn clean compile
         """
 }
