@@ -15,14 +15,14 @@ def buildpackage(){
 }
 //构建镜像
 def docker_images(libary_name,images_name,tag_name,giturl_branch){
-        sh """
+        sh '''
            images=$(echo ${images_name} | tr '[A-Z]' '[a-z]')
            tag=$(echo ${tag_name} | tr '[A-Z]' '[a-z]')
            cp  ${WORKSPACE}/src/main/docker/Dockerfile ${WORKSPACE}/target/
            cp ${WORKSPACE}/script/docker/build_pom.sh ${WORKSPACE}/target/
            cd ${WORKSPACE}/target/
            sh build_pom.sh ${libary_name} ${images} ${tag} ${images_name}_${tag_name} ${giturl_branch}
-        """
+        '''
 }
 //手动打包
 def buildArtifacts(){
