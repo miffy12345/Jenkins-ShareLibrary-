@@ -10,7 +10,7 @@ def compile(){
 //构建打包
 def buildpackage(){
         sh """
-           mvn clean package -Dmaven.test.skip=true
+           mvn package -Dmaven.test.skip=true
         """
 }
 
