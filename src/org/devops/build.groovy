@@ -21,7 +21,7 @@ def docker_images(libary_name,images_name,tag_name,giturl_branch){
            cp  ${WORKSPACE}/src/main/docker/Dockerfile ${WORKSPACE}/target/
            cp ${WORKSPACE}/script/docker/build_pom.sh ${WORKSPACE}/target/
            cd ${WORKSPACE}/target/
-           sh build_pom.sh ${libary_name} ${images} ${tag} ${images_name}_${tag_name} ${giturl_branch}
+           sh build_pom.sh ${libary_name} ${images} ${tag} ${images_name}-${tag_name} ${giturl_branch}
         '''
 }
 //手动打包
