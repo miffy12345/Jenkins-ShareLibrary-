@@ -4,9 +4,9 @@ package org.devops
 def checkgit(giturl,gitbranch){
         git(url: '${giturl}', credentialsId: 'gitlab-id', branch: '${git}', changelog: true, poll: false)
 }
-//拉取代码和脚本
-def checkdockergit(giturl,gitbranch){
-        git(url: '${giturl}', credentialsId: 'gitlab-id', branch: '${git}', changelog: true, poll: false)
+//拉取代码和脚本（开发环境）
+def dev_git(giturl){
+        git(url: '${giturl}', credentialsId: 'gitlab-id', branch: 'dev', changelog: true, poll: false)
         dir('script') {
           git(url: 'http://gitlab.powerdata.com.cn/jenkins/Script_Library.git', credentialsId: 'gitlab-id', branch: 'master', changelog: true, poll: false)
         }
