@@ -13,7 +13,7 @@ def flowcallback1(project_name,build_id,step_name,flow_name){
         """
 }
 
-def flowcallback2(project_name,build_id,step_name,flow_name,groupId,artifactId,version,Product_type){
+def flowcallback(project_name,build_id,step_name,flow_name,Product_type,groupId,artifactId,version){
         sh """
           curl --location --request POST 'http://2.2.2.104:32215/gitlab/api/integration/flowlog/flowcallback' \
           --header 'Content-Type: application/json' \
@@ -22,15 +22,15 @@ def flowcallback2(project_name,build_id,step_name,flow_name,groupId,artifactId,v
              "build_id":"${build_id}",
              "step_name":"${step_name}",
              "flow_name":"${flow_name}",
+             "Product_type":"${Product_type}",
              "groupId":"${groupId}",
              "artifactId":"${artifactId}",
-             "version":"${version}",
-             "Product_type":"${Product_type}"
+             "version":"${version}"
           }'
         """
 }
 
-def flowcallback(project_name,build_id,step_name,flow_name){
+def flowcallback2(project_name,build_id,step_name,flow_name){
         sh """
           curl --location --request POST 'http://2.2.2.104:32215/gitlab/api/integration/flowlog/flowcallback' \
           --header 'Content-Type: application/json' \
