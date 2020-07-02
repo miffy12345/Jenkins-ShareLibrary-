@@ -13,6 +13,25 @@ def buildpackage(){
            mvn package -Dmaven.test.skip=true
         """
 }
+//构建打包（包含多种打包类型）
+def Build(buildType){
+        if ("${buildType}" == "maven"){
+            sh """
+               mvn package -Dmaven.test.skip=true
+            """
+        }
+        if ("${buildType}" == "npm"){
+            sh """
+               echo"当前选择的构建类型为npm"
+            """
+        }
+        if ("${buildType}" == "android"){
+            sh """
+               echo"当前选择的构建类型为android"
+            """
+        }
+}
+
 //构建镜像
 def docker_images(libary_name,images_name,tag_name){
         sh '''
