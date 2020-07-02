@@ -15,21 +15,23 @@ def buildpackage(){
 }
 //构建打包（包含多种打包类型）
 def Build(buildType){
-        echo ${buildType}
         if ("${buildType}" == "maven"){
-            sh """
+           sh """
                mvn package -Dmaven.test.skip=true
             """
-        }else if("${buildType}" == "npm"){
+        }
+        else if("${buildType}" == "npm"){
             sh """
                echo"当前选择的构建类型为npm"
             """
-        }else if("${buildType}" == "android"){
+        }
+        else if("${buildType}" == "android"){
             sh """
                echo"当前选择的构建类型为android"
             """
-        }else{           
-        sh """
+        }
+        else{           
+            sh """
                echo"当前选择的构建类型为其他"
             """
             }
