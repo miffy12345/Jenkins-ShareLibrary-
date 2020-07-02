@@ -15,6 +15,7 @@ def buildpackage(){
 }
 //构建打包（包含多种打包类型）
 def Build(buildType){
+        echo ${buildType}
         if ("${buildType}" == "maven"){
             sh """
                mvn package -Dmaven.test.skip=true
