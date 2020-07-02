@@ -19,17 +19,19 @@ def Build(buildType){
             sh """
                mvn package -Dmaven.test.skip=true
             """
-        }
-        if ("${buildType}" == "npm"){
+        }else if("${buildType}" == "npm"){
             sh """
                echo"当前选择的构建类型为npm"
             """
-        }
-        if ("${buildType}" == "android"){
+        }else if("${buildType}" == "android"){
             sh """
                echo"当前选择的构建类型为android"
             """
-        }
+        }else{           
+        sh """
+               echo"当前选择的构建类型为其他"
+            """
+            }
 }
 
 //构建镜像
