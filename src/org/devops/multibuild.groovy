@@ -9,8 +9,6 @@ def multibuild(system_type){
             '''
     }
     else{
-        sh '''
-               echo"当前选择的构建类型为其他"
-           '''
+            println("当前选择的构建类型为其他")
     }
 }
