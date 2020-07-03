@@ -1,11 +1,11 @@
 package org.devops
 
 //拉取git代码
-def checkgit(giturl,gitbranch){
+def checkgit-bak(giturl,gitbranch){
         git(url: '${giturl}', credentialsId: 'f0e12104-5d43-4fde-982f-24352215b6bb', branch: '${git}', changelog: true, poll: false)
 }
 
-def checkgit-bak(giturl,gitbranch){
+def checkgit(giturl,gitbranch){
         git(url: '${giturl}', credentialsId: 'gitlab-id', branch: '${git}', changelog: true, poll: false)
 }
 
