@@ -1,7 +1,8 @@
 package org.devops
 
 //构建打包（包含多种打包类型）
-def Build(buildType){
+def multibuild(system_type){
+        
         if("${buildType}" == "Maven"){
            sh '''
                mvn package -Dmaven.test.skip=true
